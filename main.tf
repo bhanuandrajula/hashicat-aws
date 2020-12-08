@@ -103,8 +103,6 @@ data "aws_ami" "ubuntu" {
   }
 
   owners = ["099720109477"] # Canonical
-  Department                  = "devops"
-
 }
 
 resource "aws_eip" "hashicat" {
@@ -127,6 +125,7 @@ resource "aws_instance" "hashicat" {
   
   tags = {
     Name = "${var.prefix}-hashicat-instance"
+    Department                  = "devops"
   }
 }
 
